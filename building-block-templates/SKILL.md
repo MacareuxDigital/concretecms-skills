@@ -40,3 +40,16 @@ Custom templates allow you to override the default view of a block type. This is
 - [ ] **Asset Loading**: If the template requires specific CSS or JS, are they being required properly via the controller or by adding them to the template directory (Concrete will auto-load `view.css` and `view.js` if they are in the template folder)?
 - [ ] **Empty State**: Does the template handle empty data gracefully?
 
+## Commonly Used Data and Performance
+
+- **User State**: To check if a user is logged in, use the application container and the `isRegistered()` method for better performance and to avoid deprecated methods:
+    ```php
+    use Concrete\Core\User\User;
+    $u = app(User::class);
+    if ($u->isRegistered()) {
+        // User is logged in
+    }
+    ```
+- **Page Object**: Usually available as `$c`. If not, use `Page::getCurrentPage()`.
+- **URL Facade**: Use `Url::to('/path')` for generating links.
+
