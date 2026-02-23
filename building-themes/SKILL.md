@@ -77,4 +77,10 @@ Every theme requires at least:
     - Common handles include `bootstrap5`, `bootstrap4`, `bootstrap3`, `foundation`, and `nine_sixty`.
     - If your theme uses a different CSS framework (like Tailwind CSS) or a custom grid system, do not define `$pThemeGridFrameworkHandle`.
 - **Modern Features**: Favor Containers over hardcoded areas for flexible layouts in Concrete CMS v9+.
+- **Containers**:
+    - **Naming**: Always ask the user for clarification before naming a container if the name is not explicitly provided.
+    - **Element Path**: `themes/your_theme_handle/elements/containers/your_container_handle.php`
+    - **Implementation**: Use `Concrete\Core\Area\ContainerArea` to define editable regions within the container.
+    - **Registration**: Define containers in the package's `config/install.xml` file using the `<containers>` tag.
+    - **Usage**: Containers are added to areas in the CMS by users, providing structured, reusable layouts.
 
