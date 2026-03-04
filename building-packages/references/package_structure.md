@@ -69,6 +69,9 @@ class Controller extends Package
     /**
      * The custom autoloader prefixes to be automatically added to the class loader.
      *
+     * In this example, classes in `packages/hello_world/src/` should have the `\HelloWorld` namespace.
+     * For example, `packages/hello_world/src/MyFolder/MyClass.php` would have the namespace `HelloWorld\MyFolder`.
+     * 
      * @var array
      */
     protected $pkgAutoloaderRegistries = [
@@ -121,16 +124,18 @@ class Controller extends Package
     
     public function on_start()
     {
-        // Autoload 3rd party libraries
-//        $this->registerAutoload();
+        $this->registerAutoload();
     }
 
-//    private function registerAutoload()
-//    {
-//        if (file_exists($this->getPackagePath() . '/vendor/autoload.php')) {
-//            require $this->getPackagePath() . '/vendor/autoload.php';
-//        }
-//    }
+    /**
+     * Autoload 3rd party libraries if vendor/autoload.php exists.
+     */
+    protected function registerAutoload()
+    {
+        if (file_exists($this->getPackagePath() . '/vendor/autoload.php')) {
+            require $this->getPackagePath() . '/vendor/autoload.php';
+        }
+    }
 }
 ```
 
@@ -140,9 +145,12 @@ class Controller extends Package
 - Controller class named `Controller`, extending `Concrete\Core\Package\Package`.
 - Include `$pkgHandle`, `$appVersionRequired`, and `$pkgVersion`. 
 - Implement `getPackageDescription()` and `getPackageName()` for Dashboard display.
-- Define `$pkgAutoloaderRegistries` property if you register custom namespaces for autoloading.
+- Define `$pkgAutoloaderRegistries` property if you register custom namespaces for autoloading. 
+  - The key is the directory (relative to the package root), and the value is the namespace prefix.
+  - **Important**: This prefix maps directly to the specified directory. If `src` is mapped to `MyVendor\MyPackage`, then a class `MyVendor\MyPackage\Search\MyClass` should be located at `src/Search/MyClass.php`, NOT `src/MyVendor/MyPackage/Search/MyClass.php`.
+- **Note on Composer**: If your package includes a `composer.json` file and has 3rd party dependencies installed via Composer, you MUST register the composer autoloader in `on_start()` (typically via a `registerAutoload()` method as shown above). This ensures that classes from the `vendor` directory are available. If the package has no external dependencies, this step can be omitted.
 - Define `install()` method for installation actions.
 - Define `upgrade()` method for adding or removing additional functionality. You need to update `$pkgVersion` and push the Update button to apply changes.
 - Define `uninstall()` method for removing package data.
-- Define `on_start()` method if you need custom startup code for the package (e.g., autoloading third-party libraries).
+- Define `on_start()` method if you need custom startup code for the package (e.g., registering routes, service providers, or autoloading third-party libraries).
 - Important: Namespace and directory name must align; mismatches result in 'Unknown Package' and 'Broken Package' errors.

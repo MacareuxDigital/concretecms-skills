@@ -22,6 +22,7 @@ Follow these steps to develop a custom package in Concrete CMS:
 4.  **Add Custom Functionality**:
     - **Extend Core Classes**: [Extending Core Classes Reference](references/extending_core.md)
     - **Custom Block Types**: Use the `building-blocktypes` skill.
+    - **Single Pages**: Use the `building-singlepages` skill.
     - **Routes and Services**: [Routing and Service Providers Reference](references/routing_services.md)
 5.  **Install the Package**:
     Use the Concrete CMS Dashboard or CLI (`concrete/bin/concrete c5:package:install my_custom_package`) to install your package.
