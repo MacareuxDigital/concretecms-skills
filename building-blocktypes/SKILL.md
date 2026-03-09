@@ -23,6 +23,10 @@ Block types are the fundamental units of content in Concrete CMS. They allow use
     - Refer to the `working-with-database` skill for the XML format.
 6.  **Register the Block Type**:
     - Install via Dashboard or programmatically in a package `install()` method.
+7.  **Update Package Version** (if the block type belongs to a package):
+    - Increment `$pkgVersion` in the package's `controller.php`.
+    - Update the package's changelog or version history file if one exists.
+    - The version bump is required for the `upgrade()` method to run and install the new block type on existing sites.
 
 ## Reference Documentation
 
