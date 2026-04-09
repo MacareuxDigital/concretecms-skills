@@ -18,10 +18,14 @@ Block types are the fundamental units of content in Concrete CMS. They allow use
     - Create `view.php` for the public output.
 4.  **Create Add/Edit Forms**:
     - Create `add.php` and `edit.php` for the dashboard interface.
-5.  **Define Database Schema**:
+    - These files typically include `form.php`: `<?php $this->inc('form.php'); ?>`
+    - Do not forget these files, as they are required for the block to be added or edited in the CMS.
+5.  **Create the Form Template**:
+    - Create `form.php` which is shared by both `add.php` and `edit.php`.
+6.  **Define Database Schema**:
     - Create `db.xml` (Doctrine XML format) to define the block's data table.
     - Refer to the `working-with-database` skill for the XML format.
-6.  **Register the Block Type**:
+7.  **Register the Block Type**:
     - Install via Dashboard or programmatically in a package `install()` method.
 
 ## Reference Documentation
