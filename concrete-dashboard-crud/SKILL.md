@@ -120,6 +120,55 @@ public function view()
 
 ## 3. UI Implementation
 
+### Delete Confirmation
+
+To implement a standard Concrete CMS delete confirmation dialog, use `ConcreteAlert.confirm()` in your search results table.
+
+#### Controller
+
+In your `view()` method, ensure the deletion action URL is available.
+
+```php
+$this->set('deleteAction', $this->action('delete'));
+```
+
+#### View Template
+
+Add a hidden form or a `data-modal` attribute containing the confirmation form for each row.
+
+```php
+<tr data-details-url="<?= $view->action('edit', $item->getItem()->getId()) ?>">
+    <?php foreach ($item->getColumns() as $column) { ?>
+        <td><?= $column->getColumnValue() ?></td>
+    <?php } ?>
+    <td class="text-right">
+        <?php
+        $deleteForm = '<form method="post" action="' . $view->action('delete', $item->getItem()->getId()) . '">'
+            . app('helper/validation/token')->output('delete', true)
+            . t('Are you sure you want to delete this item?')
+            . '</form>';
+        ?>
+        <button type="button" class="btn btn-danger btn-xs" 
+                data-modal="<?= h($deleteForm) ?>" 
+                onclick="ccm_deleteItem(this)">
+            <?= t('Delete') ?>
+        </button>
+    </td>
+</tr>
+
+<script>
+    var ccm_deleteItem = function(elem) {
+        var modal = elem.getAttribute('data-modal');
+        ConcreteAlert.confirm(modal, function() {
+            var submitButton = document.querySelector('.ui-dialog button[data-dialog-action]');
+            submitButton.disabled = true;
+            var modalForm = document.querySelector('#ccm-popup-confirmation form');
+            modalForm.submit();
+        }, 'btn-danger', '<?= t('Delete') ?>');
+    };
+</script>
+```
+
 ### Search Element (`search.php`)
 Use `app('helper/form')` to get the form helper.
 
