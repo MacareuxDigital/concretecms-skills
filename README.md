@@ -54,6 +54,11 @@ npx skills update
 | `customizing-express-form` | Customizing the appearance of Express forms |
 | `working-with-database` | Connecting to the database or querying from custom code |
 | `concrete-cms-security` | Writing or reviewing Concrete CMS PHP with security in mind |
+| `cms-updater` | Upgrading the Concrete CMS core while keeping `application/` overrides compatible |
+| `override-check` | Inventorying `application/` overrides and writing `overrides.md` |
+| `release-notes-analyzer` | Reviewing Concrete CMS release notes for breaking changes before an update |
+| `environment-compatibility-audit` | Auditing PHP, MySQL, Apache, or Nginx upgrade compatibility |
+| `package-overview` | Auditing installed packages, versions, and compatibility |
 
 ## Usage
 
@@ -65,6 +70,7 @@ Each skill is a folder under `skills/`:
 
 - `SKILL.md` — instructions for the agent
 - `references/` — supporting documentation loaded on demand (optional)
+- `scripts/` — helper scripts the agent should run (optional)
 
 ## References for contributors
 

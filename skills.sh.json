@@ -28,6 +28,17 @@
         "working-with-database",
         "concrete-cms-security"
       ]
+    },
+    {
+      "title": "Upgrades",
+      "description": "Core updates, overrides, release notes, environment audits, and package inventory.",
+      "skills": [
+        "cms-updater",
+        "override-check",
+        "release-notes-analyzer",
+        "environment-compatibility-audit",
+        "package-overview"
+      ]
     }
   ]
 }
