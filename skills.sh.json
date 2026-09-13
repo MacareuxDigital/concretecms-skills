@@ -1,0 +1,33 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Packages",
+      "description": "Create and extend Concrete CMS packages, blocks, single pages, and Dashboard CRUD.",
+      "skills": [
+        "building-packages",
+        "building-blocktypes",
+        "building-block-templates",
+        "building-singlepages",
+        "concrete-dashboard-crud"
+      ]
+    },
+    {
+      "title": "Themes and forms",
+      "description": "Theme development and Express form appearance.",
+      "skills": [
+        "building-themes",
+        "customizing-express-form"
+      ]
+    },
+    {
+      "title": "Data and security",
+      "description": "Database access and Concrete CMS security patterns from past CVEs.",
+      "skills": [
+        "working-with-database",
+        "concrete-cms-security"
+      ]
+    }
+  ]
+}

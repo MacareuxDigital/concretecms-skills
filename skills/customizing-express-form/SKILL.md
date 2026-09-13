@@ -1,5 +1,5 @@
 ---
-name: Customizing Express Form
+name: customizing-express-form
 description: Customize the appearance of Express forms in Concrete CMS
 ---
 
