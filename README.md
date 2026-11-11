@@ -51,6 +51,7 @@ npx skills update
 | `building-singlepages` | Adding dashboard pages or other single pages in a package |
 | `building-themes` | Developing a custom theme (page templates, assets, v9+ containers) |
 | `concrete-dashboard-crud` | Implementing Dashboard CRUD for Doctrine entities |
+| `overriding-and-extending-core-classes` | Overriding or extending Concrete CMS core classes, services, controllers, elements, and views |
 | `customizing-express-form` | Customizing the appearance of Express forms |
 | `working-with-database` | Connecting to the database or querying from custom code |
 | `concrete-cms-security` | Writing or reviewing Concrete CMS PHP with security in mind |

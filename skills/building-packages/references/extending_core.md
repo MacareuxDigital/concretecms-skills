@@ -9,3 +9,5 @@ This class would automatically be sourced from:
 `packages/spam_stopper/src/Concrete/Antispam/AkismetController`
 
 To know which items can be extended this way, look for `overrideable_core_class()` in the core.
+
+For comprehensive strategies on overriding services, controllers, elements, views, and event listeners, refer to the `overriding-and-extending-core-classes` skill.
