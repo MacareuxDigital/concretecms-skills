@@ -10,7 +10,8 @@
         "building-blocktypes",
         "building-block-templates",
         "building-singlepages",
-        "concrete-dashboard-crud"
+        "concrete-dashboard-crud",
+        "overriding-and-extending-core-classes"
       ]
     },
     {
