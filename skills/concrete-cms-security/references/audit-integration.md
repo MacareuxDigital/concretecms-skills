@@ -6,4 +6,4 @@ Verify APIs, permission behavior, affected version ranges and fixes against the 
 
 Escaping depends on output context: HTML encoding alone does not validate a URL scheme or make JavaScript, CSS or rich text safe. Trace the data to its actual use and evaluate all applicable controls.
 
-Use an evidence-based audit methodology such as the upstream [Cloudflare security-audit skill](https://github.com/cloudflare/security-audit-skill) when conducting an audit. This public collection supplies Concrete CMS domain guidance; audit orchestration, executable helpers, report conventions and client evidence belong in the team's audit tooling and private project records.
+Use an evidence-based audit methodology such as the upstream [Cloudflare security-audit skill](https://github.com/cloudflare/security-audit-skill) when conducting an audit.
