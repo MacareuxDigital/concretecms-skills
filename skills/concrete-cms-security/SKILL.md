@@ -7,6 +7,10 @@ description: Apply this skill whenever you are writing, reviewing, or modifying 
 
 Operational reference for writing or reviewing Concrete CMS PHP. Read top-to-bottom for a new task; jump to **Danger signals** or **Review priorities** when triaging an existing PR.
 
+## Security review guidance
+
+Read [review guidance](references/audit-integration.md) when interpreting search signals or historical patterns. Verify the actual version, actor authority, reachability, mitigating controls and impact before reporting a vulnerability.
+
 ## Structure
 
 1. **Danger signals** — grep patterns demanding deeper inspection

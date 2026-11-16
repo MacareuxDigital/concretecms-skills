@@ -72,3 +72,7 @@ Each skill is a folder under `skills/`:
 - [Agent Skills (agentskills.io)](https://agentskills.io/)
 - [Anthropic - Agent skills best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - [vercel-labs/skills](https://github.com/vercel-labs/skills)
+
+## Compatibility and security guidance
+
+See [version compatibility principles](docs/compatibility-guidance.md) for interpreting core overrides, package constraints and runtime evidence. The security skill includes [review guidance](skills/concrete-cms-security/references/audit-integration.md) on distinguishing search signals from demonstrated vulnerabilities.
